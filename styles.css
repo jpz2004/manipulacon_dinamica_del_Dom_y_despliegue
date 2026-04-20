@@ -1,37 +1,38 @@
 body {
-  font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  background: linear-gradient(135deg, #e3f2fd, #fff3e0);
+  font-family:'Courier New', Courier, monospace;
+  margin: 50;
+  background: linear-gradient(100deg, #002aff, #ffffff, #0d6efd);
 }
 
 header {
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-              url("https://images.unsplash.com/photo-1606787366850-de6330128bfc");
+  background: linear-gradient(rgba(255, 255, 255, 0.119), rgba(255, 255, 255, 0)),
+              url("https://elements-resized.envatousercontent.com/elements-preview-images/07360704-1fbd-4db2-b4b4-8fabd33542f2?w=632&cf_fit=scale-down&q=85&format=auto&s=6895f821f26861b3a2a3d1c1b487c53fdca10d791330cc8204100630b224b150");
   background-size: cover;
   background-position: center;
-  color: white;
-  padding: 60px 20px;
+  color: rgb(0, 38, 255);
+  padding: 70px 500px;
   text-align: center;
+  border-radius: 10px;
 }
 
 header h1 {
   font-size: 2.5rem;
-  letter-spacing: 1px;
+  letter-spacing: 3px;
 }
 
 .form-container {
-  background: rgba(255, 255, 255, 0.95);
-  margin: -40px auto 30px auto;
-  padding: 25px;
-  border-radius: 20px;
+  background: linear-gradient(180deg, #ffffff28, #0026ff3c);
+  margin: -10px auto 30px auto ;
+  padding: 45px;
+  border-radius: 50px;
   width: 90%;
-  max-width: 1000px;
+  max-width: 1100px;
 
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 15px;
 
-  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+  box-shadow: 0 15px 40px rgba(242, 255, 0, 0.2);
   backdrop-filter: blur(10px);
 }
 
@@ -45,9 +46,9 @@ header h1 {
 }
 
 .form-container input:focus {
-  border-color: #0d6efd;
-  background: white;
-  box-shadow: 0 0 10px rgba(13,110,253,0.3);
+  border-color: #ffe600;
+  background: rgb(255, 255, 255);
+  box-shadow: 0 0 10px rgb(229, 255, 0);
   outline: none;
 }
 
@@ -73,12 +74,12 @@ button:hover {
 }
 
 .card {
-  background: white;
+  background: rgba(229, 229, 229, 0.622);
   border-radius: 15px;
   padding: 15px;
   max-width: 300px;
   margin: auto;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 0px 15px rgba(0, 68, 255, 0.505);
   transition: 0.3s;
   display: flex;
   flex-direction: column;
@@ -86,12 +87,12 @@ button:hover {
 }
 .card h3 {
   margin: 0;
-  color: #0d6efd;
+  color: #0022ff;
 }
 
 .card p {
   margin: 0;
-  color: #555;
+  color: #000000;
 }
 
 .card:hover {
@@ -100,22 +101,22 @@ button:hover {
 .card img {
   width: 100%;
   height: 180px;
-  object-fit: contain; /* 👈 clave */
-  background: #f5f5f5;
+  object-fit: contain; 
+  background: #0000004e;
   border-radius: 10px;
 }
 
 .delete-btn {
-  background: linear-gradient(45deg, #ff4d4d, #ff0000);
+  background: linear-gradient(45deg, #003cff, #00d5ff);
   border-radius: 8px;
   padding: 8px;
-  color: white;
+  color: rgb(0, 0, 0);
   border: none;
 }
 .price {
   font-size: 1.2rem;
   font-weight: bold;
-  color: #2e7d32;
+  color: #000000;
 }
 .input-group {
   display: flex;
@@ -131,8 +132,8 @@ button:hover {
   grid-column: span 2;
   padding: 14px;
   border-radius: 12px;
-  background: linear-gradient(45deg, #ff9800, #ff5722);
-  color: white;
+  background: linear-gradient(45deg, #003cff, #00d5ff);
+  color: rgb(0, 0, 0);
   border: none;
   font-weight: bold;
   cursor: pointer;
@@ -141,10 +142,27 @@ button:hover {
 
 #saveBtn:hover {
   transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(255,87,34,0.4);
+  box-shadow: 0 10px 20px rgba(234, 255, 0, 0.4);
 }
 #productCount {
-  color: white;
+  color: rgb(0, 0, 0);
   font-weight: bold;
   margin-top: 10px;
+}
+
+.footer {
+  font-family: 'Times New Roman', Times, serif;
+  margin-top: 40px;
+  padding: 15px;
+  text-align: center;
+  background-color: rgba(135, 135, 135, 0.205);
+  color: rgb(0, 0, 0);
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  border-top: 1px solid rgb(0, 76, 255);
+}
+
+.footer p {
+  margin: 0;
+  opacity: 0.8;
 }

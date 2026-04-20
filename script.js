@@ -6,10 +6,6 @@ let products = JSON.parse(localStorage.getItem("products")) || [];
 saveBtn.addEventListener("click", createProduct);
 
 function createProduct() {
-function updateCounter() {
-const count = document.querySelectorAll(".card").length;
-document.getElementById("productCount").textContent = "Productos: " + count;
-}
 
   const image = document.getElementById("image").value;
   const title = document.getElementById("title").value;
@@ -21,7 +17,6 @@ document.getElementById("productCount").textContent = "Productos: " + count;
 
   const COUPON_CODE = "DESC50";
 
-  // VALIDACIÓN
   if (!image || !title || !description || !priceInput) {
     alert("Completa todos los campos");
     return;
@@ -32,28 +27,28 @@ document.getElementById("productCount").textContent = "Productos: " + count;
     return;
   }
 
-  // DESCUENTO
+  // 🔥 CONTROL DE DESCUENTO
+  let discounted = false;
+
   if (coupon === COUPON_CODE) {
     price = price * 0.5;
+    discounted = true;
   }
 
-  // GUARDAR EN ARRAY
   const product = {
     image,
     title,
     description,
-    price
+    price,
+    discounted
   };
 
   products.push(product);
 
-  // GUARDAR EN LOCALSTORAGE
   localStorage.setItem("products", JSON.stringify(products));
 
-  // RENDERIZAR
   renderProducts();
 
-  // LIMPIAR
   document.getElementById("image").value = "";
   document.getElementById("title").value = "";
   document.getElementById("description").value = "";
@@ -67,10 +62,31 @@ function renderProducts() {
 
   products.forEach((product, index) => {
 
-    let priceFormateado = product.price.toLocaleString("es-CO", {
-      style: "currency",
-      currency: "COP"
-    });
+    let priceHTML = "";
+
+    if (product.discounted) {
+      const originalPrice = (product.price * 2).toLocaleString("es-CO", {
+        style: "currency",
+        currency: "COP"
+      });
+
+      const finalPrice = product.price.toLocaleString("es-CO", {
+        style: "currency",
+        currency: "COP"
+      });
+
+      priceHTML = `
+        <p style="text-decoration: line-through; color: gray;">${originalPrice}</p>
+        <p class="price">${finalPrice}</p>
+      `;
+    } else {
+      const priceFormateado = product.price.toLocaleString("es-CO", {
+        style: "currency",
+        currency: "COP"
+      });
+
+      priceHTML = `<p class="price">${priceFormateado}</p>`;
+    }
 
     const card = document.createElement("div");
     card.classList.add("card");
@@ -79,11 +95,10 @@ function renderProducts() {
       <img src="${product.image}" alt="producto">
       <h3>${product.title}</h3>
       <p>${product.description}</p>
-      <p class="price">${priceFormateado}</p>
+      ${priceHTML}
       <button class="delete-btn">Eliminar</button>
     `;
 
-    // ELIMINAR CON LOCALSTORAGE
     card.querySelector(".delete-btn").addEventListener("click", () => {
       products.splice(index, 1);
       localStorage.setItem("products", JSON.stringify(products));
@@ -96,5 +111,11 @@ function renderProducts() {
   updateCounter();
 }
 
-// CARGAR AL INICIAR
+// CONTADOR
+function updateCounter() {
+  const count = document.querySelectorAll(".card").length;
+  document.getElementById("productCount").textContent = "Productos: " + count;
+}
+
+// INICIAL
 renderProducts();
