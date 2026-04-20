@@ -1,1 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catalogo de productos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
+  <header>
+    <h1>Catalogo de productos</h1>
+    <p id="productCount">Productos: 0</p>
+  </header>
+
+  <main>
+
+    <!-- FORMULARIO -->
+    <section class="form-container">
+      <input type="text" id="image" placeholder="https://...">
+      <input type="text" id="title" placeholder="Nombre del producto">
+      <input type="text" id="description" placeholder="Describa el producto">
+      <input type="number" id="price" placeholder="Valor">
+      <input type="text" id="coupon" placeholder="Cupon de DESC50">
+      
+      <button id="saveBtn">Guardar Producto</button>
+    </section>
+
+    <!-- CONTENEDOR DE TARJETAS -->
+    <section id="productContainer" class="product-container"></section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
