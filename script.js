@@ -56,7 +56,6 @@ function createProduct() {
   document.getElementById("coupon").value = "";
 }
 
-// RENDERIZAR PRODUCTOS
 function renderProducts() {
   productContainer.innerHTML = "";
 
@@ -111,11 +110,9 @@ function renderProducts() {
   updateCounter();
 }
 
-// CONTADOR
 function updateCounter() {
   const count = document.querySelectorAll(".card").length;
   document.getElementById("productCount").textContent = "Productos: " + count;
 }
 
-// INICIAL
 renderProducts();
