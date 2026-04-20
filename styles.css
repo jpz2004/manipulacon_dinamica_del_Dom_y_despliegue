@@ -1,18 +1,17 @@
 body {
   font-family:'Courier New', Courier, monospace;
-  margin: 0; /* 🔥 importante */
+  margin: 0; 
   padding: 20px;
   background: linear-gradient(100deg, #002aff, #ffffff, #0d6efd);
 }
 
-/* HEADER */
 header {
   background: linear-gradient(rgba(255, 255, 255, 0.119), rgba(255, 255, 255, 0)),
               url("https://elements-resized.envatousercontent.com/elements-preview-images/07360704-1fbd-4db2-b4b4-8fabd33542f2?w=632&cf_fit=scale-down&q=85&format=auto&s=6895f821f26861b3a2a3d1c1b487c53fdca10d791330cc8204100630b224b150");
   background-size: cover;
   background-position: center;
   color: rgb(0, 38, 255);
-  padding: 60px 20px; /* 🔥 adaptable */
+  padding: 60px 20px; 
   text-align: center;
   border-radius: 10px;
 }
@@ -22,7 +21,6 @@ header h1 {
   letter-spacing: 3px;
 }
 
-/* FORM */
 .form-container {
   background: linear-gradient(180deg, #ffffff28, #0026ff3c);
   margin: -20px auto 30px auto;
@@ -55,7 +53,6 @@ header h1 {
   outline: none;
 }
 
-/* BOTONES */
 button {
   padding: 12px;
   background: linear-gradient(45deg, #0d6efd, #42a5f5);
@@ -70,7 +67,6 @@ button:hover {
   transform: scale(1.05);
 }
 
-/* GRID PRODUCTOS */
 .product-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -78,7 +74,6 @@ button:hover {
   gap: 20px;
 }
 
-/* CARD */
 .card {
   background: rgba(229, 229, 229, 0.622);
   border-radius: 15px;
@@ -113,7 +108,6 @@ button:hover {
   border-radius: 10px;
 }
 
-/* BOTÓN ELIMINAR */
 .delete-btn {
   background: linear-gradient(45deg, #003cff, #00d5ff);
   border-radius: 8px;
@@ -122,21 +116,18 @@ button:hover {
   border: none;
 }
 
-/* PRECIO */
 .price {
   font-size: 1.2rem;
   font-weight: bold;
   color: #000000;
 }
 
-/* CONTADOR */
 #productCount {
   color: rgb(0, 0, 0);
   font-weight: bold;
   margin-top: 10px;
 }
 
-/* FOOTER */
 .footer {
   font-family: 'Times New Roman', Times, serif;
   margin-top: 40px;
@@ -154,7 +145,6 @@ button:hover {
   opacity: 0.8;
 }
 
-/* 📱 RESPONSIVE */
 @media (max-width: 768px) {
   header h1 {
     font-size: 2rem;

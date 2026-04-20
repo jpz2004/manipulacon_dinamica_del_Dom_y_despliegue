@@ -27,7 +27,6 @@ function createProduct() {
     return;
   }
 
-  // 🔥 CONTROL DE DESCUENTO
   let discounted = false;
 
   if (coupon === COUPON_CODE) {
